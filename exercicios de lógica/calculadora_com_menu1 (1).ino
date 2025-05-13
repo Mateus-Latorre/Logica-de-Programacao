@@ -1,20 +1,30 @@
 // C++ code
 //
-
-float n1;
-float n2;
-float soma;
 float subtracao;
 float divisao;
 float multiplicacao;
 int escolhaDaOperacao;
 int contador;
-
+float resultado;
+  float somar(float n1, float n2){
+  return (n1 + n2 + n3);
+}
+float subtrair(float n1, float n2){
+  return (n1 - n2);
+}
+float multiplicar(float n1, float n2){
+  return (n1 * n2);
+}
+float dividir(float n1, float n2){
+  return (n1 / n2);
+}
 void setup()
 {
   Serial.begin(9600);
   
    do{
+float n1;
+float n2;
    Serial.println("Seja bem-vindo(a) a calculadora, aproveite ;p");
   Serial.println("Escolha uma das opcoes/operacoes");
   Serial.println("1- Soma");
@@ -33,33 +43,30 @@ void setup()
   Serial.println("Agora, para realizar a operacao, digite o 2º numero:");
   while(! Serial.available()) {} //Espera o usuario digitar
   n2 = Serial.parseFloat();
-  
-  if (escolhaDaOperacao == 1){
-  soma = n1 + n2;
-  Serial.println("O resultado foi: " + String(soma));
+     
   
   switch(escolhaDaOperacao){
    case 1:
-    soma = n1 + n2;
-    Serial.println("O resultado foi: " + String(soma)); 
+    resultado = somar(n1, n2);
+    Serial.println("O resultado foi: " + String(resultado)); 
     
     break;
     
   case 2:
-    subtracao = n1 - n2;
-    Serial.println("O resultado foi: " + String(subtracao)); 
+    resultado = subtrair(n1, n2);
+    Serial.println("O resultado foi: " + String(resultado)); 
     
     break;
     
   case 3:
-    multiplicacao = n1 * n2;
-    Serial.println("O resultado foi: " + String(multiplicacao)); 
+    resultado = multiplicar(n1, n2);
+    Serial.println("O resultado foi: " + String(resultado)); 
     
     break;
     
   case 4:
-    divisao = n1 / n2;
-    Serial.println("O resultado foi: " + String(divisao)); 
+    resultado = dividir(n1, n2);
+    Serial.println("O resultado foi: " + String(resultado)); 
     
     break;
     
@@ -75,7 +82,7 @@ void setup()
     contador = 0;
     Serial.println("Ate breve, volte mais vezes");
    }
-  }}
+  }
   while(contador != 0);
    }
 
